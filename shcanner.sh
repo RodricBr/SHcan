@@ -1,12 +1,9 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
-VERMELHO='\033[31;1m' # '\033[31m' = Vermelho ';' concatena o Vermelho com o '\033[1m' é Negrito
-VERDE='\033[32;1m'    # '\033[32m' = Verde
-AZUL='\033[34;1m'     # '\033[34m' = Azul
-AMARELO='\033[33;1m'  # '\033[33' = Amarelo
-CYANO='\033[0;36m'    # '\033[0;36m' = Cyano
-FIM='\033[m'          # Reseta a cor
-
+VERMELHO='\033[31;1m'
+VERDE='\033[32;1m'
+AMARELO='\033[33;1m'
+FIM='\033[m'
 
 if [[ -z "$@" ]]; then
   echo -e "\n${AMARELO}Como usar:${FIM} $0 <IP/Domnínio> <Range de portas>\n\
@@ -25,15 +22,6 @@ Identificações: Portas, serviços, sistemas operacionais
   fi
 fi
 
-if [[ ! -z "$1" ]] || [[ "$@" == "-A" ]]; then
+if [[ ! -z "$1" ]] || [[ "${@: -1}" == "-A" ]]; then
   nmap -Pn -sV --version-intensity 5 -p $2 $1
-fi
-
-if [[ "$@" == "-I" ]]; then
-  read -rp "Scan agrassivo[A] | Scan passivo[P]: " resposta_1
-
-  case "$resposta_1" in
-    "A") nmap -Pn -sV --version-intensity 5 -p $2 $1 ;;
-    "P") nmap -Pn -sV --version-intensity 0 -p $2 $1 ;;
-  esac
 fi
