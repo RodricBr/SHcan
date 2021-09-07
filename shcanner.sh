@@ -25,11 +25,11 @@ Identificações: Portas, serviços, sistemas operacionais
   fi
 fi
 
-if [[ ! -z "$1" ]] || [[ "$1" == "-A" ]]; then
+if [[ ! -z "$1" ]] || [[ "$@" == "-A" ]]; then
   nmap -Pn -sV --version-intensity 5 -p $2 $1
 fi
 
-if [[ "$1" == "-I" ]]; then
+if [[ "$@" == "-I" ]]; then
   read -rp "Scan agrassivo[A] | Scan passivo[P]: " resposta_1
 
   case "$resposta_1" in
