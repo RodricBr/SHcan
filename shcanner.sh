@@ -13,7 +13,7 @@ if [[ -z "$@" ]]; then
   "
   if command -v nmap >/dev/null 2>&1; then
       echo -e "${VERDE}NMAP instalado!${FIM}"
-      echo -e "Versão: $(nmap -v)"
+      echo -e "Versão: $(nmap --version)"
       exit 0
   else
       echo -e "${VERMELHO}NMAP não encontrado!${FIM}"
