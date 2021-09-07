@@ -30,10 +30,10 @@ if [[ ! -z "$1" ]] || [[ "$1" == "-A" ]]; then
 fi
 
 if [[ "$1" == "-I" ]]; then
-  read -rp "Sim[y] Não[N]: " resposta_1
+  read -rp "Scan agrassivo[A] | Scan passivo[P]: " resposta_1
 
   case "$resposta_1" in
-    "-A") nmap -Pn -sV --version-intensity 5 -p $2 $1 ;;
-    "-P") nmap -Pn -sV --version-intensity 0 -p $2 $1 ;;
+    "A") nmap -Pn -sV --version-intensity 5 -p $2 $1 ;;
+    "P") nmap -Pn -sV --version-intensity 0 -p $2 $1 ;;
   esac
 fi
