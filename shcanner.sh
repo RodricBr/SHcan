@@ -29,3 +29,9 @@ if [[ ! -z "$1" ]] || [[ "${@: -1}" == "-A" ]]; then
 elif "${@: -1}" == "-P"; then
   nmap -Pn -sV --version-intensity 0 -p $2 $1
 fi
+
+# Agressivo:
+# nmap -Pn -sV --version-intensity 5 -p $2 $1
+
+# Passivo:
+# nmap -Pn -sV --version-intensity 0 -p $2 $1
