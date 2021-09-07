@@ -6,7 +6,8 @@ AMARELO='\033[33;1m'
 FIM='\033[m'
 
 if [[ -z "$@" ]]; then
-  echo -e "\n${AMARELO}Como usar:${FIM} $0 <IP/Domnínio> <Range de portas>\n\
+  echo -e "\n${AMARELO}Como usar:${FIM}
+$0 <IP/Domnínio> <Range de portas> <-A (Agressivo) | -P (Passivo)>\n\
 Ex: $0 192.168.1.4 80-443\n\
 Identificações: Portas, serviços, sistemas operacionais
   "
@@ -24,4 +25,12 @@ fi
 
 if [[ ! -z "$1" ]] || [[ "${@: -1}" == "-A" ]]; then
   nmap -Pn -sV --version-intensity 5 -p $2 $1
+elif "${@: -1}" == "-P"; then
+  nmap -Pn -sV --version-intensity 0 -p $2 $1
 fi
+
+# Agressivo:
+# nmap -Pn -sV --version-intensity 5 -p $2 $1
+
+# Passivo:
+# nmap -Pn -sV --version-intensity 0 -p $2 $1
