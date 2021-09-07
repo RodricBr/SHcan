@@ -8,5 +8,5 @@
 $ git clone https://github.com/rodricbr/shcanner
 $ cd shcanner/;ls
 $ chmod +x shcanner.sh
-$ ./shcanner.sh <-h>
+$ ./shcanner.sh -h
 ```
