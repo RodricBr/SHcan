@@ -6,9 +6,9 @@ Agresivo/Passivo não funciona no momento
 
 ### Como executar SHcanner.sh (Testado no [GitBash](https://git-scm.com/downloads) e Debian 10 Buster)
 ```bash
-$ git clone https://github.com/rodricbr/shcanner
-$ cd shcanner/;ls
-$ chmod +x shcanner.sh
+$ git clone https://github.com/rodricbr/shcan
+$ cd shcan/;ls
+$ chmod +x shcan.sh
 $ ./shcan.sh -h
 ```
 
