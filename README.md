@@ -12,7 +12,7 @@ $ chmod +x shcanner.sh
 $ ./shcan.sh -h
 ```
 
-### Como testar conexão com porta local usando netcat:
+### Como testar portas em conexão local usando netcat:
 ```bash
 ## 1º terminal
 $ ifconfig
