@@ -9,5 +9,17 @@ Agresivo/Passivo não funciona no momento
 $ git clone https://github.com/rodricbr/shcanner
 $ cd shcanner/;ls
 $ chmod +x shcanner.sh
-$ ./shcanner.sh -h
+$ ./shcan.sh -h
+```
+
+### Como testar conexão com porta local usando netcat:
+```bash
+## 1º terminal
+$ ifconfig
+..: ip local, ex:192.168.0.1 :..
+$ nc -vlnp 123
+
+## 2º terminal
+$ ./shcan.sh 192.168.0.1 1-123
+..: porta aberta: 123 :..
 ```
