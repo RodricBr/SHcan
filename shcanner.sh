@@ -5,14 +5,14 @@ VERDE='\033[32;1m'
 AMARELO='\033[33;1m'
 FIM='\033[m'
 
-if [[ -z "$@" ]] || [[ "$@" == -h ]]; then
+if [[ -z "$*" ]] || [[ "$*" == -h ]]; then # usando o * ao invés de @
   echo -e "\n${AMARELO}Como usar:${FIM}
 \t$0 -h   : Modo de uso
 \t$0 <IP/Domnínio> <Range de portas> <-A (Agressivo) | -P (Passivo)>\n\
 \tEx: $0 192.168.1.4 80-443\n\
 \tIdentificações: Portas, serviços, sistemas operacionais
   "
-  if command -v nmap >/dev/null 2>&1; then
+  if [[ -n $(command -v nmap) ]]; then
       echo -e "${VERDE}NMAP instalado!${FIM}"
       echo -e "${VERDE}Versão:${FIM} $(nmap --version)"
       exit 0
@@ -24,10 +24,10 @@ if [[ -z "$@" ]] || [[ "$@" == -h ]]; then
   fi
 fi
 
-if [[ ! -z "$1" ]] || [[ "${@: -1}" == "-A" ]]; then
-  nmap -Pn -sV --version-intensity 5 -p $2 $1
-elif "${@: -1}" == "-P"; then
-  nmap -Pn -sV --version-intensity 0 -p $2 $1
+if [[ -n "$1" ]] || [[ "${*: -1}" == "A" ]]; then # Usando -n ao invés de ! -z
+  nmap -Pn -sV --version-intensity 5 -p "$2" "$1"
+elif "${*: -1}" == "P"; then # @: 1 == último caractere
+  nmap -Pn -sV --version-intensity 2 -p "$2" "$1"
 fi
 
 # Agressivo:
