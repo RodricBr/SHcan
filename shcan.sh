@@ -5,6 +5,17 @@ VERDE='\033[32;1m'
 AMARELO='\033[33;1m'
 FIM='\033[m'
 
+banner_(){
+  printf "
+  ######  ##     ##  ######     ###    ##    ##
+ ##    ## ##     ## ##    ##   ## ##   ###   ##
+ ##       ##     ## ##        ##   ##  ####  ##
+  ######  ######### ##       ##     ## ## ## ##
+       ## ##     ## ##       ######### ##  ####
+ ##    ## ##     ## ##    ## ##     ## ##   ###
+  ######  ##     ##  ######  ##     ## ##    ## \n\tnmap basic scanner"
+}
+
 if [[ -z "$*" ]] || [[ "$*" == -h ]]; then # usando o * ao invés de @
   echo -e "\n${AMARELO}Como usar:${FIM}
 \t$0 -h   : Modo de uso
@@ -25,13 +36,7 @@ if [[ -z "$*" ]] || [[ "$*" == -h ]]; then # usando o * ao invés de @
 fi
 
 if [[ -n "$1" ]] || [[ "${*: -1}" == "A" ]]; then # Usando -n ao invés de ! -z
-  echo -e "
-         __
-   _____/ /_  _________ _____
-  / ___/ __ \/ ___/ __ `/ __ \
- (__  ) / / / /__/ /_/ / / / /
-/____/_/ /_/\___/\__,_/_/ /_/  \n\tnmap basic scanner
-  "
+  banner_
   nmap -Pn -sV --version-intensity 5 -p "$2" "$1"
 elif "${*: -1}" == "P"; then # @: 1 == último caractere
   nmap -Pn -sV --version-intensity 2 -p "$2" "$1"
@@ -42,3 +47,4 @@ fi
 
 # Passivo:
 # nmap -Pn -sV --version-intensity 0 -p $2 $1
+#
