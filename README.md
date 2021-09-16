@@ -24,3 +24,9 @@ $ sudo nc -vlnp 123
 $ ./shcan.sh 192.168.0.1 1-123
 ..: porta aberta: 123 :..
 ```
+
+### Nota:
+O script não foi feito para ser útil ou
+100% funcional, é um projeto pessoal
+a fim de aprender sobre shell scripting
+que decidi tornar público
