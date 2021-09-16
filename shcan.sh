@@ -38,7 +38,7 @@ fi
 if [[ -n "$1" ]] || [[ "${*: -1}" == "A" ]]; then # Usando -n ao invés de ! -z
   banner_
   nmap -Pn -sV --version-intensity 5 -p "$2" "$1"
-elif "${*: -1}" == "P"; then # @: 1 == último caractere
+elif [ "${*: -1}" '==' "P" ]; then # *: -1 == último caractere
   nmap -Pn -sV --version-intensity 2 -p "$2" "$1"
 fi
 
