@@ -20,7 +20,7 @@ if [[ -z "$*" ]] || [[ "$*" == -h ]]; then # usando o * ao invés de @
   echo -e "\n${AMARELO}Como usar:${FIM}
 \t$0 -h   : Modo de uso
 \t$0 <IP/Domnínio> <Range de portas> <-A (Agressivo) | -P (Passivo)>\n\
-\tEx: $0 192.168.1.4 80-443\n\
+\tEx: $0 192.168.1.4 80-443 -A\n\
 \tIdentificações: Portas, serviços, sistemas operacionais
   "
   if [[ -n $(command -v nmap) ]]; then
