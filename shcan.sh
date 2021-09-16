@@ -47,4 +47,4 @@ fi
 
 # Passivo:
 # nmap -Pn -sV --version-intensity 0 -p $2 $1
-# 50 é par https://drive.google.com/drive/folders/14Dmj1DrRfgmSY2rZIWmvLERyRRlCglkw
+# 50 é par
