@@ -17,7 +17,7 @@ $ ./shcan.sh -h
 ## 1º terminal
 $ ifconfig
 ..: ip local, ex:192.168.0.1 :..
-$ nc -vlnp 123
+$ sudo nc -vlnp 123
 ..: escutando porta 123 :..
 
 ## 2º terminal
