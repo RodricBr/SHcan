@@ -32,8 +32,9 @@ $ sudo shcan.sh 192.168.0.1 1, 123
 ### Exemplos:
 ```bash
 $ sudo shcan.sh 192.168.0.1 443
-$ sudo shcan.sh 192.168.1.4 80-443 A
-$ sudo shcan.sh 192.168.1.4 80,443,1337,22 P
+$ sudo shcan.sh 192.168.0.4 80-443 A
+$ sudo shcan.sh 192.168.0.4 80,443,1337,22 P
+$ sudo shcan.sh 192.168.0.4 T
 ```
 
 ### Nota:
