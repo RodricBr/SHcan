@@ -28,6 +28,13 @@ $ shcan.sh 192.168.0.1 1, 123
 ..: porta aberta: 123 :..
 ```
 
+### Exemplos:
+```bash
+$ shcan.sh 192.168.0.1 443
+$ shcan.sh 192.168.1.4 80-443 -A
+$ shcan.sh 192.168.1.4 80,443,1337,22 -P
+```
+
 ### Nota:
 O script não foi feito para ser útil ou
 100% funcional, é um projeto pessoal
