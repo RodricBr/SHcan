@@ -10,7 +10,7 @@ $ git clone https://github.com/rodricbr/shcan
 $ cd shcan/;ls
 $ chmod +x shcan.sh
 $ sudo mv shcan.sh /usr/local/bin
-$ ./shcan.sh -h
+$ shcan.sh -h
 ```
 
 ### Como testar portas em conexão local usando netcat:
@@ -22,7 +22,9 @@ $ sudo nc -vlnp 123
 ..: escutando porta 123 :..
 
 ## 2º terminal
-$ ./shcan.sh 192.168.0.1 1-123
+$ shcan.sh 192.168.0.1 1-123
+ou
+$ shcan.sh 192.168.0.1 1, 123
 ..: porta aberta: 123 :..
 ```
 
