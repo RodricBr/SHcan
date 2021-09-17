@@ -1,9 +1,9 @@
-```markdown
+
 ### Sumário:
-- Scanner de portas usando NMAP
-- para os preguiçosos ou pra quem
-- não consegue decorar as opções (como eu) :)
-```
+- Scanner de portas usando NMAP <br>
+- para os preguiçosos ou pra quem <br>
+- não consegue decorar as opções (como eu) :) <br>
+
 
 ### Como executar SHcan.sh (Testado no [GitBash](https://git-scm.com/downloads) e Debian 10 Buster)
 ```bash
