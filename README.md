@@ -4,7 +4,7 @@
 - para os preguiçosos (como eu) :)
 ```
 
-### Como executar SHcanner.sh (Testado no [GitBash](https://git-scm.com/downloads) e Debian 10 Buster)
+### Como executar SHcan.sh (Testado no [GitBash](https://git-scm.com/downloads) e Debian 10 Buster)
 ```bash
 $ git clone https://github.com/rodricbr/shcan
 $ cd shcan/;ls
