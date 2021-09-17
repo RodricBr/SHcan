@@ -9,6 +9,7 @@
 $ git clone https://github.com/rodricbr/shcan
 $ cd shcan/;ls
 $ chmod +x shcan.sh
+$ sudo mv shcan.sh /usr/local/bin
 $ ./shcan.sh -h
 ```
 
