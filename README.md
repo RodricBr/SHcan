@@ -5,7 +5,7 @@
 ```
 
 ### Como executar SHcanner.sh (Testado no [GitBash](https://git-scm.com/downloads) e Debian 10 Buster)
-```sh
+```bash
 $ git clone https://github.com/rodricbr/shcan
 $ cd shcan/;ls
 $ chmod +x shcan.sh
@@ -14,7 +14,7 @@ $ ./shcan.sh -h
 ```
 
 ### Como testar portas em conexão local usando netcat:
-```sh
+```bash
 ## 1º terminal
 $ ifconfig
 ..: ip local, ex:192.168.0.1 :..
