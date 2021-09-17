@@ -6,6 +6,14 @@ AMARELO='\033[33;1m'
 FIM='\033[m'
 
 banner_(){
+  cat <<-EOF${VERDE}
+     _
+    | |
+ ___| |__   ___ __ _ _ __
+/ __| '_ \ / __/ _` | '_ \
+\__ \ | | | (_| (_| | | | |
+|___/_| |_|\___\__,_|_| |_|${FIM}
+EOF
   echo -e "${VERDE}
   ######  ##     ##  ######     ###    ##    ##
  ##    ## ##     ## ##    ##   ## ##   ###   ##
@@ -16,7 +24,7 @@ banner_(){
   ######  ##     ##  ######  ##     ## ##    ##${FIM}\n\tbasic nmap scanner\n\n"
 }
 
-if [[ -z "$*" ]] || [[ "$*" == "-h" ]]; then # usando o * ao invés de @
+if [[ -z "$*" ]] || [[ "$*" == -h ]]; then # usando o * ao invés de @
   echo -e "\n${AMARELO}Como usar:${FIM}
 \tshcan.sh -h   : Modo de uso\n
 \tshcan.sh <IP/Domnínio> <Range de portas> <-A (Agressivo) | -P (Passivo)>\n\
