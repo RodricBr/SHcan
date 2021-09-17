@@ -13,15 +13,16 @@ banner_(){
   ######  ######### ##       ##     ## ## ## ##
        ## ##     ## ##       ######### ##  ####
  ##    ## ##     ## ##    ## ##     ## ##   ###
-  ######  ##     ##  ######  ##     ## ##    ##${FIM}\n\tnmap basic scanner\n\n"
+  ######  ##     ##  ######  ##     ## ##    ##${FIM}\n\tbasic nmap scanner\n\n"
 }
 
 if [[ -z "$*" ]] || [[ "$*" == -h ]]; then # usando o * ao invés de @
   echo -e "\n${AMARELO}Como usar:${FIM}
-\t$0 -h   : Modo de uso
-\t$0 <IP/Domnínio> <Range de portas> <-A (Agressivo) | -P (Passivo)>\n\
-\tEx: $0 192.168.1.4 80-443 -A\n\
-\tIdentificações: Portas, serviços, sistemas operacionais
+\tshcan.sh -h   : Modo de uso\n
+\tshcan.sh <IP/Domnínio> <Range de portas> <-A (Agressivo) | -P (Passivo)>\n\
+\tEx: shcan.sh 192.168.1.4 80-443 -A\n\
+\tEx: shcan.sh 192.168.1.4 80,443,1337,22 -P
+\tIdentificações: Portas, serviços, sistemas operacionais, varreduras TCP SYN .. UDP
   "
   if [[ -n $(command -v nmap) ]]; then
       echo -e "${VERDE}NMAP instalado!${FIM}"
@@ -37,14 +38,18 @@ fi
 
 if [[ -n "$1" ]] || [[ "${*: -1}" == "A" ]]; then # Usando -n ao invés de ! -z
   banner_
-  nmap -Pn -sV --version-intensity 5 -p "$2" "$1"
+  nmap -Pn -sV -T5 -p "$2" "$1" -sS -traceroute
 elif [ "${*: -1}" '==' "P" ]; then # *: -1 == último caractere
-  nmap -Pn -sV --version-intensity 2 -p "$2" "$1"
+  banner_
+  nmap -Pn -sV -T2 -p "$2" "$1" -sS -traceroute
 fi
+
+# Fazer um scan com as portas mais famosas (-p-)
+# Adicionar a opção -A (to enable OS and version detection, script scanning, and traceroute)
 
 # Agressivo:
 # nmap -Pn -sV --version-intensity 5 -p $2 $1
 
 # Passivo:
 # nmap -Pn -sV --version-intensity 0 -p $2 $1
-# 50 é par
+#
