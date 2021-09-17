@@ -41,20 +41,14 @@ if [[ -z "$*" ]] || [[ "$*" == -h ]]; then # usando o * ao invés de @
   fi
 fi
 
-todas_(){
-  for i in {1..65536}; do
-    nmap -Pn -sV -T5 "$2" 1-65536
-  done
-}
-
 if [[ "${*: -1}" == "A" ]]; then # Usando -n ao invés de ! -z
   banner_
   nmap -Pn -sV -T5 -p "$2" "$1" -sS -traceroute # -iR 0 --open to locate random web servers for browsing
 elif [ "${*: -1}" '==' "P" ]; then # *: -1 == último caractere
   banner_
   nmap -Pn -sV -T2 -p "$2" "$1" -sS -traceroute
-elif [ "${*: -1}" '==' "T" ]; then
-  todas_
+#elif [ "${*: -1}" '==' "T" ]; then
+  # Todas as portas
 fi
 
 # Fazer um scan com as portas mais famosas (-p-)
@@ -65,4 +59,3 @@ fi
 
 # Passivo:
 # nmap -Pn -sV --version-intensity 0 -p $2 $1
-#
