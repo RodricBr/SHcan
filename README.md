@@ -41,4 +41,7 @@ $ sudo shcan.sh 192.168.0.4 T
 O script não foi feito para ser útil ou
 100% funcional, é um projeto pessoal
 a fim de aprender sobre shell scripting
-que decidi tornar público
+que decidi tornar público.
+O script tem que rodar como sudo, pois
+o nmap requer o uso de privilégio root
+para executar a opção -sS e -traceroute
