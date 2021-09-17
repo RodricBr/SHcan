@@ -1,7 +1,8 @@
 ```markdown
 ### Sumário:
 - Scanner de portas usando NMAP
-- para os preguiçosos (como eu) :)
+- para os preguiçosos ou pra quem
+- não consegue decorar as opções (como eu) :)
 ```
 
 ### Como executar SHcan.sh (Testado no [GitBash](https://git-scm.com/downloads) e Debian 10 Buster)
@@ -10,7 +11,7 @@ $ git clone https://github.com/rodricbr/shcan
 $ cd shcan/;ls
 $ chmod +x shcan.sh
 $ sudo mv shcan.sh /usr/local/bin
-$ shcan.sh -h
+$ sudo shcan.sh -h
 ```
 
 ### Como testar portas em conexão local usando netcat:
@@ -22,17 +23,17 @@ $ sudo nc -vlnp 123
 ..: escutando porta 123 :..
 
 ## 2º terminal
-$ shcan.sh 192.168.0.1 1-123
+$ sudo shcan.sh 192.168.0.1 1-123
 ou
-$ shcan.sh 192.168.0.1 1, 123
+$ sudo shcan.sh 192.168.0.1 1, 123
 ..: porta aberta: 123 :..
 ```
 
 ### Exemplos:
 ```bash
-$ shcan.sh 192.168.0.1 443
-$ shcan.sh 192.168.1.4 80-443 A
-$ shcan.sh 192.168.1.4 80,443,1337,22 P
+$ sudo shcan.sh 192.168.0.1 443
+$ sudo shcan.sh 192.168.1.4 80-443 A
+$ sudo shcan.sh 192.168.1.4 80,443,1337,22 P
 ```
 
 ### Nota:
